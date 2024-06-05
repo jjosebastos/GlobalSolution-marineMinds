@@ -1,5 +1,3 @@
-package model.arquivos;
-
 import model.usuario.Endereco;
 import model.usuario.Telefone;
 import model.usuario.Usuario;
@@ -16,6 +14,8 @@ public class UsuarioTest {
         enderecoSetUp = new Endereco(1l, "Rua das flores", "236", "Rosário", "São Paulo", "08430-170", "SP" );
         telefoneSetUp = new Telefone(1L, "55", "11", "4174-1009", "Celular");
         usuarioSetUp = new Usuario(1l, "jjosebastos", "12345678", enderecoSetUp, telefoneSetUp);
+
+
     }
 
     @Test
@@ -29,21 +29,24 @@ public class UsuarioTest {
     }
 
     @Test
-    void checar_telefone(){
-        Assertions.assertNotEquals("4172-9415", usuarioSetUp.getTelefone().getNumero());
+    void gets_telefone(){
+        Assertions.assertEquals(1L, usuarioSetUp.getTelefone().getIdTelefone());
         Assertions.assertEquals("11", usuarioSetUp.getTelefone().getDdd());
         Assertions.assertEquals("Celular", usuarioSetUp.getTelefone().getTipo());
         Assertions.assertEquals("55", usuarioSetUp.getTelefone().getDdi());
-        Assertions.assertEquals(1l, usuarioSetUp.getTelefone().getIdTelefone());
     }
 
     @Test
     void sets_telefone(){
-        usuarioSetUp.setIdUsuario(2L);
-        Assertions.assertEquals(2L, usuarioSetUp.getIdUsuario());
-        Assertions.assertNotEquals("4172-9415", usuarioSetUp.getTelefone().getDdd());
-        Assertions.assertNotEquals("4172-9415", usuarioSetUp.getTelefone().getTipo());
-        Assertions.assertNotEquals("4172-9415", usuarioSetUp.getTelefone().getDdi());
-        Assertions.assertNotEquals("4172-9415", usuarioSetUp.getTelefone().getIdTelefone());
+        usuarioSetUp.setIdUsuario(2l);
+        usuarioSetUp.setUserName("josebastos");
+        usuarioSetUp.setSenha("12345");
+        usuarioSetUp.setEndereco(enderecoSetUp);
+        usuarioSetUp.setTelefone(telefoneSetUp);
+
+        Assertions.assertEquals(2l, usuarioSetUp.getIdUsuario());
+        Assertions.assertEquals("josebastos", usuarioSetUp.getUserName());
+        Assertions.assertEquals("12345", usuarioSetUp.getSenha());
+        Assertions.assertEquals(enderecoSetUp, usuarioSetUp.getEndereco());
     }
 }
