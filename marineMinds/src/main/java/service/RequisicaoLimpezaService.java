@@ -18,17 +18,18 @@ public class RequisicaoLimpezaService implements  IRequisicaoLimpeza{
     }
 
     @Override
-    public void atualizarRequisicao(long idRequisicao) {
+    public void removerRequisicao(Long idRemocao) {
+        List<RequisicaoLimpeza> listRemocao = new ArrayList<>();
 
-        if (!listRequisicaoLimpeza.isEmpty()){
-            for (: listRequisicaoLimpeza){
-                if(s.equalsIgnoreCase())
+        if (listRequisicaoLimpeza.isEmpty()){
+            for(RequisicaoLimpeza rl: listRequisicaoLimpeza){
+                if(rl.getIdRequisicao() == idRemocao){
+                    listRemocao.add(rl);
+                }
             }
+            listRequisicaoLimpeza.removeAll(listRemocao);
+        } else {
+            throw new RuntimeException("Lista vazia");
         }
-    }
-
-    @Override
-    public void removerRequisicao(Long id) {
-
     }
 }

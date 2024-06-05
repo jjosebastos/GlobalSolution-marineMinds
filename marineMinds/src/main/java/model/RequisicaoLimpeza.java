@@ -1,13 +1,16 @@
 package model;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class RequisicaoLimpeza {
     private Long idRequisicao;
     private String descricao;
-    private String data;
-    private String hora;
+    private Date data;
+    private Time hora;
     private String tipoLixo;
 
-    public RequisicaoLimpeza(Long idRequisicao, String descricao, String data, String hora, String tipoLixo) {
+    public RequisicaoLimpeza(Long idRequisicao, String descricao, Date data, Time hora, String tipoLixo) {
         this.idRequisicao = idRequisicao;
         this.descricao = descricao;
         this.data = data;
@@ -31,19 +34,19 @@ public class RequisicaoLimpeza {
         this.descricao = descricao;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
-    public String getHora() {
+    public Time getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(Time hora) {
         this.hora = hora;
     }
 
