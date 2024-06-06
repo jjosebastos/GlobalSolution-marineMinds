@@ -1,4 +1,4 @@
-import model.usuario.Endereco;
+import com.mrm.model.usuario.Endereco;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,6 @@ public class EnderecoTest {
     @BeforeEach
     void setUp(){
         enderecoSetup = new Endereco();
-        enderecoSetup.setIdEndereco(1l);
         enderecoSetup.setRua("Rua das flores");
         enderecoSetup.setNumero("23");
         enderecoSetup.setBairro("Jardins");

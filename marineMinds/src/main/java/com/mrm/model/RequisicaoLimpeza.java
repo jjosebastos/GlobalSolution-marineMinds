@@ -1,4 +1,4 @@
-package model;
+package com.mrm.model;
 
 import java.sql.Time;
 import java.util.Date;

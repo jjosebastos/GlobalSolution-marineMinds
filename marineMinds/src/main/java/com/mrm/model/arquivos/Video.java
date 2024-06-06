@@ -1,4 +1,4 @@
-package model.arquivos;
+package com.mrm.model.arquivos;
 
 import java.sql.Time;
 

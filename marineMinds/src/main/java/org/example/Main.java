@@ -1,17 +1,18 @@
 package org.example;
 
-import model.usuario.Endereco;
-import model.usuario.Telefone;
-import model.usuario.Usuario;
+import com.mrm.model.usuario.Endereco;
+import com.mrm.model.usuario.Telefone;
+import com.mrm.model.usuario.Usuario;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-            Usuario jose = new Usuario();
-            String resp = "sim";
 
+            Usuario jose = new Usuario();
+            Boolean continua = true;
+            String resp;
 
             long idUsuario;
             String userName;
@@ -19,9 +20,8 @@ public class Main {
             Endereco endereco;
             Telefone telefone;
 
-            while (resp == "sim"){
+            while (continua){
                 System.out.println("Cadastro de usuário!");
-
                 System.out.println("Informe o ID do usuario: ");
                 idUsuario = in.nextLong();
                 jose.setIdUsuario(idUsuario);
@@ -35,28 +35,22 @@ public class Main {
                 jose.setSenha(senha);
 
                 System.out.println("Cadastro de endereço: ");
-                System.out.println("Informe o endereço no formato (id,rua,numero,bairro,cidade,cep,uf): ");
-                String enderecoStr = in.next();
-                String enderecoCad[] = enderecoStr.split(",");
-
-                endereco = new Endereco(enderecoCad[0], enderecoCad[1],
-                        enderecoCad[2], enderecoCad[3], enderecoCad[4], enderecoCad[5]);
+                System.out.println("Informe o endereço no formato (rua,numero,bairro,cidade,cep,uf): ");
+                endereco = new Endereco(in.next(), in.next(), in.next(), in.next(), in.next(), in.next());
                 jose.setEndereco(endereco);
 
                 System.out.println("Cadastro de telefone: ");
                 System.out.println("Informe o telefone no formato (id, ddi, ddd, numero,tipo): ");
-                String telefoneStr = in.next();
-                String telefoneCad [] = telefoneStr.split(",");
-
-                telefone = new Telefone(Long.parseLong(telefoneCad[0]), telefoneCad[1], telefoneCad[2],
-                        telefoneCad[3], telefoneCad[5]);
+                telefone = new Telefone(in.next(), in.next(), in.next(), in.next());
                 jose.setTelefone(telefone);
 
                 System.out.println("Deseja continuar cadastros de usuários: (sim/nao)");
-                resp = in.nextLine();
-            }
-        in.close();
+                resp = in.next();
 
+                continua = resp == "sim";
+
+            }
+        System.out.println("Usuario cadastrado: " + jose );
 
         }
     }

@@ -1,27 +1,18 @@
-package model.usuario;
+package com.mrm.model.usuario;
 
 public class Telefone {
-    private long idTelefone;
     private String ddi;
     private String ddd;
     private String numero;
     private String tipo;
 
-    public Telefone(long idTelefone, String ddi, String ddd, String numero, String tipo) {
-        this.idTelefone = idTelefone;
+    public Telefone(String ddi, String ddd, String numero, String tipo) {
         this.ddi = ddi;
         this.ddd = ddd;
         this.numero = numero;
         this.tipo = tipo;
     }
 
-    public long getIdTelefone() {
-        return idTelefone;
-    }
-
-    public void setIdTelefone(long idTelefone) {
-        this.idTelefone = idTelefone;
-    }
 
     public String getDdi() {
         return ddi;

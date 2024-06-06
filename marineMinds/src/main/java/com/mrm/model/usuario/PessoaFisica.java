@@ -1,4 +1,4 @@
-package model.usuario;
+package com.mrm.model.usuario;
 
 public class PessoaFisica extends Usuario{
     private String nome;

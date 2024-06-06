@@ -1,7 +1,4 @@
-package model.usuario;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.mrm.model.usuario;
 
 public  class Usuario {
     private long idUsuario;
@@ -9,8 +6,6 @@ public  class Usuario {
     private String senha;
     private Endereco endereco;
     private Telefone telefone;
-
-    Map<Long, Usuario> mapUsuario = new HashMap<>();
 
     public Usuario(long idUsuario, String userName, String senha, Endereco endereco, Telefone telefone) {
         this.idUsuario = idUsuario;

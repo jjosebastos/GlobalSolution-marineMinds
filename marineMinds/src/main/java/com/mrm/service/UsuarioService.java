@@ -1,6 +1,6 @@
-package service;
+package com.mrm.service;
 
-import model.usuario.Usuario;
+import com.mrm.model.usuario.Usuario;
 
 import java.util.HashMap;
 import java.util.Map;

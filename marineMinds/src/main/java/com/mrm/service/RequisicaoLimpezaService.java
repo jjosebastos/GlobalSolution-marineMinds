@@ -1,6 +1,6 @@
-package service;
+package com.mrm.service;
 
-import model.RequisicaoLimpeza;
+import com.mrm.model.RequisicaoLimpeza;
 
 import java.util.ArrayList;
 import java.util.List;

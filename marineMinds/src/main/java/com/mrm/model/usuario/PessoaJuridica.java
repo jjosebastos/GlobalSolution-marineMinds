@@ -1,4 +1,4 @@
-package model.usuario;
+package com.mrm.model.usuario;
 
 public class PessoaJuridica extends Usuario{
     private String cnpj;

@@ -1,6 +1,6 @@
-package model.arquivos;
+package com.mrm.model.arquivos;
 
-public class Arquivo {
+public abstract class Arquivo {
     private Long idArquivo;
     private String nome;
     private String tipo;

@@ -1,7 +1,6 @@
-package model.usuario;
+package com.mrm.model.usuario;
 
 public class Endereco {
-    private Long idEndereco;
     private String rua;
     private String numero;
     private String bairro;
@@ -9,8 +8,7 @@ public class Endereco {
     private String cep;
     private String uf;
 
-    public Endereco(Long idEndereco, String rua, String numero, String bairro, String cidade, String cep, String uf) {
-        this.idEndereco = idEndereco;
+    public Endereco(String rua, String numero, String bairro, String cidade, String cep, String uf) {
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -20,14 +18,6 @@ public class Endereco {
     }
 
     public Endereco(){}
-
-    public Long getIdEndereco() {
-        return idEndereco;
-    }
-
-    public void setIdEndereco(Long idEndereco) {
-        this.idEndereco = idEndereco;
-    }
 
     public String getRua() {
         return rua;

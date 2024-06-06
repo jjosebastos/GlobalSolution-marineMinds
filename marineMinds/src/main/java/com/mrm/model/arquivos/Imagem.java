@@ -1,4 +1,4 @@
-package model.arquivos;
+package com.mrm.model.arquivos;
 
 public class Imagem extends Arquivo {
     private String formato;
