@@ -1,3 +1,10 @@
+/**
+ * Classe que herda da classe Usuario para criar
+ * um usuário pessoa jurídica de acordo com os padrões brasileiros.
+ * @author MarineMinds
+ * @see com.mrm.model.usuario.Usuario
+ * @version 1.0-SNAPSHOT
+ */
 package com.mrm.model.usuario;
 
 public class PessoaJuridica extends Usuario{

@@ -12,11 +12,22 @@ public class RequisicaoLimpezaService implements  IRequisicaoLimpeza{
         this.listRequisicaoLimpeza = new ArrayList<>();
     }
 
+    /**
+     * @author MarineMinds
+     * @param requisicaoLimpeza
+     * @return void Método para criar uma nova RequisicaoLimpeza
+     * @version 1.0-SNAPSHOT
+     */
     @Override
     public void adicionarRequisicao(RequisicaoLimpeza requisicaoLimpeza) {
         listRequisicaoLimpeza.add(requisicaoLimpeza);
     }
 
+    /**
+     * @param idRemocao
+     * @return void Método para remover uma requisição com base no id
+     * @version 1.0-SNAPSHOT
+     */
     @Override
     public void removerRequisicao(Long idRemocao) {
         List<RequisicaoLimpeza> listRemocao = new ArrayList<>();
@@ -33,6 +44,10 @@ public class RequisicaoLimpezaService implements  IRequisicaoLimpeza{
         }
     }
 
+    /**
+     * Método que retorna todas as requisições feitas.
+     * @version 1.0-SNAPSHOT
+     */
     @Override
     public void pesquisarRequisicoes() {
         System.out.println(listRequisicaoLimpeza);

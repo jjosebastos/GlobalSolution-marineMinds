@@ -1,3 +1,11 @@
+/**
+ * Classe "pai" que disponibiliza métodos base para criação
+ * das classes filhas PessoaFisica e PessoaJuridica.
+ * @author MarineMinds
+ * @see com.mrm.model.usuario.PessoaFisica
+ * @see com.mrm.model.usuario.PessoaJuridica
+ * @version 1.0-SNAPSHOT
+ */
 package com.mrm.model.usuario;
 
 public  class Usuario {

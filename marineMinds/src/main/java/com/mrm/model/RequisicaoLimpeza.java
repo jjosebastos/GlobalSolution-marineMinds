@@ -11,13 +11,15 @@ public class RequisicaoLimpeza {
     private LocalDate data;
     private LocalTime hora;
     private String tipoLixo;
+    private  Localizacao localizacao;
 
-    public RequisicaoLimpeza(Long idRequisicao, String descricao, LocalDate data, LocalTime hora, String tipoLixo) {
+    public RequisicaoLimpeza(Long idRequisicao, String descricao, LocalDate data, LocalTime hora, String tipoLixo, Localizacao localizacao) {
         this.idRequisicao = idRequisicao;
         this.descricao = descricao;
         this.data = data;
         this.hora = hora;
         this.tipoLixo = tipoLixo;
+        this.localizacao = localizacao;
     }
 
     public RequisicaoLimpeza(){}
@@ -62,14 +64,23 @@ public class RequisicaoLimpeza {
         this.tipoLixo = tipoLixo;
     }
 
+    public Localizacao getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Localizacao localizacao) {
+        this.localizacao = localizacao;
+    }
+
     @Override
     public String toString() {
-        return "RequisicaoLimpeza{" +
+        return "\nRequisicaoLimpeza{" +
                 "idRequisicao=" + idRequisicao +
                 ", descricao='" + descricao + '\'' +
                 ", data=" + data +
                 ", hora=" + hora +
                 ", tipoLixo='" + tipoLixo + '\'' +
+                ", localizacao=" + localizacao +
                 '}';
     }
 }

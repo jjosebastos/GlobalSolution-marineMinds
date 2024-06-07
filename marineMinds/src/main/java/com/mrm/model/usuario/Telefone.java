@@ -1,3 +1,9 @@
+/**
+ * Classe que contém padrões brasileiros para utilização
+ * do atributo Telefone.
+ * @author MarineMinds
+ * @version 1.0-SNAPSHOT
+ */
 package com.mrm.model.usuario;
 
 public class Telefone {

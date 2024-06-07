@@ -1,3 +1,10 @@
+/**
+ * Classe que contém padrões brasileiros para utilização
+ * do atributo Endereco.
+ * @author MarineMinds
+ * @version 1.0-SNAPSHOT
+ */
+
 package com.mrm.model.usuario;
 
 public class Endereco {

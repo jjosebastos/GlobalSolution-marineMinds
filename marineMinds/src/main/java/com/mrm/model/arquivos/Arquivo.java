@@ -1,9 +1,28 @@
+/**
+ * Pacote que contem uma classe abstrata "Arquivo" onde Imagem
+ * e Video herdam seus respectivos atributos e métodos
+ * @author MarineMinds
+ * @see com.mrm.model.arquivos.Imagem
+ * @see com.mrm.model.arquivos.Video
+ * @version 1.0-SNAPSHOT
+ */
 package com.mrm.model.arquivos;
+
+
 
 public abstract class Arquivo { ;
     private String nome;
     private String tipo;
     private int tamanho;
+
+
+    /**
+     *
+     * @param nome
+     * @param tipo
+     * @param tamanho
+     * @throws RuntimeException se o "tamanho" do arquivo for maior que 50mb.
+     */
 
     public Arquivo( String nome, String tipo, int tamanho) {
         this.nome = nome;

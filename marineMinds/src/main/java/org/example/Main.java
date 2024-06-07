@@ -1,5 +1,6 @@
 package org.example;
 
+import com.mrm.model.Localizacao;
 import com.mrm.model.RequisicaoLimpeza;
 import com.mrm.model.usuario.Endereco;
 import com.mrm.model.usuario.Telefone;
@@ -16,10 +17,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-            Usuario usuario = new Usuario();
-            Endereco endereco = new Endereco();
-            Telefone telefone = new Telefone();
-            RequisicaoLimpeza requisicaoLimpeza = new RequisicaoLimpeza();
             RequisicaoLimpezaService requisicaoLimpezaService = new RequisicaoLimpezaService();
 
             UsuarioService joseService = new UsuarioService();
@@ -29,10 +26,10 @@ public class Main {
             String resp, respReq;
 
             while (continua){
+                Usuario usuario = new Usuario();
+                Endereco endereco = new Endereco();
+                Telefone telefone = new Telefone();
 
-                /**
-                 * USUARIO
-                 */
                 System.out.println("!------ Cadastro de usuário ------!");
 
                 System.out.print("Informe o ID do usuario: ");
@@ -94,15 +91,21 @@ public class Main {
 
                 joseService.criarUsuario(usuario);
 
-                continua = resp == "sim";
+                continua = resp.equalsIgnoreCase("sim");
 
             }
-        System.out.println("Lista de usuários cadastrados: ");
-        joseService.pesquisarUsuarios();
+            joseService.atualizarSenha(1L, "123");
+            joseService.pesquisarUsuarios();
+            System.out.println("Lista de usuários cadastrados: ");
+            joseService.pesquisarUsuarios();
+            joseService.deletarUsuario(1L);
+            System.out.println("Lista de usuários cadastrados: ");
+            joseService.pesquisarUsuarios();
 
             while (requisicao){
-                System.out.println("Cadastro de requisição!");
-
+                RequisicaoLimpeza requisicaoLimpeza = new RequisicaoLimpeza();
+                Localizacao localizacao = new Localizacao();
+                System.out.println("!------ Cadastro de endereço ------!");
                 System.out.print("Informe o id da requisição: ");
                 requisicaoLimpeza.setIdRequisicao(in.nextLong());
 
@@ -122,12 +125,22 @@ public class Main {
                 System.out.print("Qual é o tipo do lixo encontrado? ");
                 requisicaoLimpeza.setTipoLixo(in.next());
 
+                System.out.println("Informe a latitude do ocorrido: ");
+                localizacao.setLatitude(in.nextDouble());
+
+                System.out.println("Informe a longitude do ocorrido: ");
+                localizacao.setLongitude(in.nextDouble());
+
+                requisicaoLimpeza.setLocalizacao(localizacao);
+
                 requisicaoLimpezaService.adicionarRequisicao(requisicaoLimpeza);
 
-                System.out.println("Deseja relatar mais uma requisição? (sim/nao)");
+                System.out.println("Deseja relatar mais uma requisição? (sim/nao): ");
                 respReq = in.next();
-                requisicao = respReq == "sim";
+                requisicao = respReq.equalsIgnoreCase("sim");
             }
-        requisicaoLimpezaService.pesquisarRequisicoes();
+            requisicaoLimpezaService.pesquisarRequisicoes();
+
+            in.close();
     }
 }
