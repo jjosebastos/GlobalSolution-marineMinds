@@ -3,16 +3,17 @@ package com.mrm.model.usuario;
 public class Telefone {
     private String ddi;
     private String ddd;
-    private String numero;
+    private String numeroTelefone;
     private String tipo;
 
-    public Telefone(String ddi, String ddd, String numero, String tipo) {
+    public Telefone(String ddi, String ddd, String numeroTelefone, String tipo) {
         this.ddi = ddi;
         this.ddd = ddd;
-        this.numero = numero;
+        this.numeroTelefone = numeroTelefone;
         this.tipo = tipo;
     }
 
+    public Telefone(){}
 
     public String getDdi() {
         return ddi;
@@ -31,11 +32,11 @@ public class Telefone {
     }
 
     public String getNumero() {
-        return numero;
+        return numeroTelefone;
     }
 
     public void setNumero(String numero) {
-        this.numero = numero;
+        this.numeroTelefone = numero;
     }
 
     public String getTipo() {
@@ -44,5 +45,15 @@ public class Telefone {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "\nTelefone{" +
+                "ddi='" + ddi + '\'' +
+                ", ddd='" + ddd + '\'' +
+                ", numeroTelefone='" + numeroTelefone + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
     }
 }

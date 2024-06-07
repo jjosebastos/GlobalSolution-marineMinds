@@ -30,4 +30,9 @@ public class UsuarioService implements IUsuarioService{
     public void deletarUsuario(Long idUsuario) {
         mapUsuario.remove(idUsuario);
     }
+
+    @Override
+    public void pesquisarUsuarios() {
+        System.out.println(mapUsuario);
+    }
 }

@@ -1,13 +1,14 @@
 package com.mrm.model.usuario;
 
 public  class Usuario {
-    private long idUsuario;
+    private Long idUsuario;
     private String userName;
     private String senha;
     private Endereco endereco;
     private Telefone telefone;
 
     public Usuario(long idUsuario, String userName, String senha, Endereco endereco, Telefone telefone) {
+
         this.idUsuario = idUsuario;
         this.userName = userName;
         this.senha = senha;
@@ -57,5 +58,14 @@ public  class Usuario {
         this.telefone = telefone;
     }
 
-
+    @Override
+    public String toString() {
+        return "\nUsuario{" +
+                "idUsuario=" + idUsuario +
+                ", userName='" + userName + '\'' +
+                ", senha='" + senha + '\'' +
+                ", endereco=" + endereco +
+                ", telefone=" + telefone +
+                '}' + "\n";
+    }
 }

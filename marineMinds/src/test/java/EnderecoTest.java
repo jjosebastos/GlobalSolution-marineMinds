@@ -37,10 +37,6 @@ public class EnderecoTest {
     void getters_endereco_uf_sp(){
         Assertions.assertEquals("SP", enderecoSetup.getUf());
     }
-    @Test
-    void getters_endereco_id_1l(){
-        Assertions.assertEquals(1L, enderecoSetup.getIdEndereco());
-    }
 
     @Test
     void getters_endereco_bairro_jardins(){

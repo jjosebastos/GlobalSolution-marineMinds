@@ -1,13 +1,11 @@
 package com.mrm.model.arquivos;
 
-public abstract class Arquivo {
-    private Long idArquivo;
+public abstract class Arquivo { ;
     private String nome;
     private String tipo;
     private int tamanho;
 
-    public Arquivo(Long idArquivo, String nome, String tipo, int tamanho) {
-        this.idArquivo = idArquivo;
+    public Arquivo( String nome, String tipo, int tamanho) {
         this.nome = nome;
         this.tipo = tipo;
         this.tamanho = tamanho;
@@ -15,14 +13,6 @@ public abstract class Arquivo {
             throw new RuntimeException("Selecionar arquivos menores que 50MB");
         }
 
-    }
-
-    public Long getIdArquivo() {
-        return idArquivo;
-    }
-
-    public void setIdArquivo(Long idArquivo) {
-        this.idArquivo = idArquivo;
     }
 
     public String getNome() {

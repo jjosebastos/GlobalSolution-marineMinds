@@ -24,12 +24,17 @@ public class RequisicaoLimpezaService implements  IRequisicaoLimpeza{
         if (listRequisicaoLimpeza.isEmpty()){
             for(RequisicaoLimpeza rl: listRequisicaoLimpeza){
                 if(rl.getIdRequisicao() == idRemocao){
-                    listRemocao.add(rl);
+                    listRequisicaoLimpeza.remove(rl);
                 }
             }
             listRequisicaoLimpeza.removeAll(listRemocao);
         } else {
-            throw new RuntimeException("Lista vazia");
+            throw new RuntimeException("Lista vazia, por gentileza informar uma lista válida");
         }
+    }
+
+    @Override
+    public void pesquisarRequisicoes() {
+        System.out.println(listRequisicaoLimpeza);
     }
 }

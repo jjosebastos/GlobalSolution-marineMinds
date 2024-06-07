@@ -6,8 +6,8 @@ public class Video extends Arquivo {
     private Time duracao;
     private String formato;
 
-    public Video(Long idArquivo, String nome, String tipo, int tamanho, Time duracao, String formato) {
-        super(idArquivo, nome, tipo, tamanho);
+    public Video(String nome, String tipo, int tamanho, Time duracao, String formato) {
+        super(nome, tipo, tamanho);
     }
 
     public Time getDuracao() {
